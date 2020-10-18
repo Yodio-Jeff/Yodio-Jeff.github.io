@@ -2,7 +2,7 @@
 
 ### Tactical Traps
 
-[v1.1.7 candidate B] (tactical-traps/install_ios.html)
+[v1.1.7 candidate B](./tactical-traps/install_ios.html)
 
 
 
