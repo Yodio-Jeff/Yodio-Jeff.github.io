@@ -9,45 +9,100 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="msapplication-tap-highlight" content="no" />
 
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
   <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
   <style type="text/css">
-    h2 {
-      background-color: cadetblue;
-      text-align: center;
+    ion-card-header {
+        text-align: center;
+        background-color: cadetblue;
+        border-radius: 0.7rem;
+        margin-bottom: 1.7rem;
     }
-    li {
-      margin-bottom: 1rem;
-      background: darkgray;
-      padding: 7px;    }
+    ion-card-content {
+        border: 1px solid black;
+        border-radius: 0.3rem;
+    }
+    ion-accordion-group {
+      margin: auto;
+      max-width: 400px;
+      padding: 1rem 2rem;
+    }
   </style>
 </head>
 
 <body>
-  <h2>Available Bluetooth Lock App Versions</h2>
-  <ul>
-    <li>
-        V1.3.1 - <a href="v1.3.1/bluetooth-lock-v1.3.1-release.apk">Download</a>
-    </li>
-    <li>
-        V1.3.5 - <a href="v1.3.5/ble_lock-capacitor-app-release-v1.3.5.apk">Download</a>
-    </li>
-    <li>
-        V1.4.2 - <a href="v1.4.2/ble_lock-capacitor-app-release-v1.4.2.apk">Download</a>
-    </li>
-    <li>
-        V1.4.4 - <a href="v1.4.4/ble_lock-capacitor-app-release-v1.4.4.apk">Download</a>
-    </li>
-    <li>
-        V1.4.5 - <a href="v1.4.5/ble_lock-capacitor-app-release-v1.4.5.apk">Download for Android</a>
-    </li>
-    <li>
-      V1.4.5 unlocked - <a href="v1.4.5/ble_lock-capacitor-app-unlocked-v1.4.5.apk">Zoom unlocked version for Android</a>
-    </li>
-    <li>
-        V1.4.5 - <a href="itms-services://?action=download-manifest&url=https://yodio-jeff.github.io/tactical-traps/v1.4.5/manifest.plist">Download for iOS</a>
-    </li>
-  </ul>
-  
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Available Bluetooth Lock App Versions</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <!-- see the instructions at https://stackoverflow.com/questions/23561370/download-and-install-an-ipa-from-self-hosted-url-on-ios
+                 for creating iOS download links
+              -->
+              <ion-accordion-group>
+                <ion-accordion value="V1.3.1">
+                    <ion-item slot="header" color="light">
+                        <ion-label>V1.3.1</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-item color="light">
+                            <a href="v1.3.1/bluetooth-lock-v1.3.1-release.apk">Download for Android</a>
+                        </ion-item>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="V1.3.5">
+                    <ion-item slot="header" color="light">
+                        <ion-label>V1.3.5</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-item color="light">
+                            <a href="v1.3.5/ble_lock-capacitor-app-release-v1.3.5.apk">Download for Android</a>
+                        </ion-item>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="V1.4.2">
+                    <ion-item slot="header" color="light">
+                        <ion-label>V1.4.2</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-item color="light">
+                            <a href="v1.4.2/ble_lock-capacitor-app-release-v1.4.2.apk">Download for Android</a>
+                        </ion-item>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="V1.4.4">
+                    <ion-item slot="header" color="light">
+                        <ion-label>V1.4.4</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-item color="light">
+                            <a href="v1.4.4/ble_lock-capacitor-app-release-v1.4.4.apk">Download for Android</a>
+                        </ion-item>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="V1.4.5">
+                    <ion-item slot="header" color="light">
+                        <ion-label>V1.4.5</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-item color="light">
+                            <a href="v1.4.5/ble_lock-capacitor-app-release-v1.4.5.apk">Download for Android</a>
+                        </ion-item>
+                        <ion-item color="light">
+                            <a href="itms-services://?action=download-manifest&url=https://yodio-jeff.github.io/tactical-traps/v1.4.5/manifest.plist">Download for iOS</a>
+                        </ion-item>
+                    </div>
+                </ion-accordion>
+        <!-- This arrangement will not scroll when the list extends off the screen.  To get it to scroll, the height of
+            the ion-card-content has to be set to the height of the parent ion-card that's not used by the header
+            element.  In other words, some device-dependent value less than 100%.  Could try using window.onload() to
+            compute the value.  -->
+            </ion-accordion-group>
+        </ion-card-content>
+    </ion-card>
 </body>
 
 </html>
