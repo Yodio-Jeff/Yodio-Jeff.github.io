@@ -24,6 +24,7 @@
     ion-card-content {
         border: 1px solid black;
         border-radius: 0.3rem;
+        overflow: auto;
     }
     ion-accordion-group {
       margin: auto;
@@ -38,11 +39,11 @@
         <ion-card-header>
             <ion-card-title>Available Bluetooth Lock App Versions</ion-card-title>
         </ion-card-header>
-        <ion-card-content>
+        <ion-card-content id="release-list">
             <!-- see the instructions at https://stackoverflow.com/questions/23561370/download-and-install-an-ipa-from-self-hosted-url-on-ios
                  for creating iOS download links
               -->
-              <ion-accordion-group>
+            <ion-accordion-group>
                 <ion-accordion value="V1.3.1">
                     <ion-item slot="header" color="light">
                         <ion-label>V1.3.1</ion-label>
@@ -96,13 +97,41 @@
                         </ion-item>
                     </div>
                 </ion-accordion>
-        <!-- This arrangement will not scroll when the list extends off the screen.  To get it to scroll, the height of
-            the ion-card-content has to be set to the height of the parent ion-card that's not used by the header
-            element.  In other words, some device-dependent value less than 100%.  Could try using window.onload() to
-            compute the value.  -->
+                <ion-accordion value="V1.4.6">
+                    <ion-item slot="header" color="light">
+                        <ion-label>V1.4.6</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">
+                        <ion-label>Shows all named devices</ion-label>
+                        <ion-item color="light">
+                            <a href="v1.4.6/ble_lock-capacitor-app-release-unfiltered-v1.4.6.apk">Download for Android</a>
+                        </ion-item>
+                    </div>
+                </ion-accordion>
+                <filler-item></filler-item>
             </ion-accordion-group>
         </ion-card-content>
     </ion-card>
 </body>
+
+<script type="text/javascript">
+    customElements.define(
+        'filler-item',
+        class extends HTMLElement  {
+            connectedCallback() {
+                let el = document.getElementById('release-list');
+                let timer = setInterval(() => {
+                    let top = el.offsetTop + 'px';
+                    console.log(`top: ${top}`);
+                    if (top !== '0px') {
+                        clearInterval(timer);
+                        el.style.setProperty('height', `calc(100vh - 3rem - ${top})`);
+                    }
+                }, 100);
+            }
+            disconnectedCallback() {}
+        }
+    )
+</script>
 
 </html>
