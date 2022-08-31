@@ -31,6 +31,11 @@
       max-width: 400px;
       padding: 1rem 2rem;
     }
+    .subtitle {
+        width: 100%;
+        text-align: center;
+        font-size: large;
+    }
   </style>
 </head>
 
@@ -125,6 +130,21 @@
                         </ion-item>
                     </div>
                 </ion-accordion>
+            </ion-accordion-group>
+            <ion-item>
+                <div class="subtitle"> Bluetooth Scanner </div>
+            </ion-item>
+            <ion-accordion-group>
+                <ion-accordion value="V1.4.7">
+                    <ion-item slot="header" color="light">
+                        <ion-label>V1.4.7</ion-label>
+                    </ion-item>
+                    <div class="ion-padding accordion-content" slot="content">
+                        <ion-item color="light">
+                            <a href="itms-services://?action=download-manifest&url=https://yodio-jeff.github.io/tactical-traps/v1.4.7/scanner.plist">Download for iOS</a>
+                        </ion-item>
+                    </div>
+                </ion-accordion>
                 <filler-item></filler-item>
             </ion-accordion-group>
         </ion-card-content>
@@ -132,6 +152,7 @@
 </body>
 
 <script type="text/javascript">
+    // hack to set the height of the ion-card-content element so the content will scroll
     customElements.define(
         'filler-item',
         class extends HTMLElement  {
