@@ -36,13 +36,18 @@
         text-align: center;
         font-size: large;
     }
+    .separator {
+        margin-top: 0.5rem;
+        border-top: 2px dotted black;
+        padding-top: 0.5rem;
+    }
   </style>
 </head>
 
 <body>
     <ion-card>
         <ion-card-header>
-            <ion-card-title>Available Bluetooth Lock App Versions -- 1:10 PM</ion-card-title>
+            <ion-card-title>Available Bluetooth Lock App Versions -- 4:30 PM</ion-card-title>
         </ion-card-header>
         <ion-card-content id="release-list">
             <!-- see the instructions at https://stackoverflow.com/questions/23561370/download-and-install-an-ipa-from-self-hosted-url-on-ios
@@ -69,7 +74,7 @@
                         </ion-item>
                     </div>
                 </ion-accordion>
-                <ion-accordion value="V1.4.2">
+                <ion-accordion value="V1.4.2" class="separator">
                     <ion-item slot="header" color="light">
                         <ion-label>V1.4.2</ion-label>
                     </ion-item>
@@ -180,6 +185,16 @@
                     <div class="ion-padding accordion-content" slot="content">
                         <ion-item color="light">
                             <a href="itms-services://?action=download-manifest&url=https://yodio-jeff.github.io/tactical-traps/v1.4.11/manifest.plist">Download for iOS</a>
+                        </ion-item>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="V1.5.0" class="separator">
+                    <ion-item slot="header" color="light">
+                        <ion-label>V1.5.0</ion-label>
+                    </ion-item>
+                    <div class="ion-padding accordion-content" slot="content">
+                        <ion-item color="light">
+                            <a href="itms-services://?action=download-manifest&url=https://yodio-jeff.github.io/tactical-traps/v1.5.0/manifest.plist">Download for iOS</a>
                         </ion-item>
                     </div>
                 </ion-accordion>
